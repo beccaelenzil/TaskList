@@ -1,0 +1,15 @@
+<h1>Tasks</h1>
+<ul>
+  <% @tasks.each do |task|  %>
+    <li>
+      <%= link_to task.task_name, task_path(task.id) %>
+        <ul>
+            <li> Description: <%= task["description"] %> </li> 
+            <li> Due: <%= task["due_date"] %> </li>
+        </ul>
+        </br>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Create New Task", new_task_path %>
